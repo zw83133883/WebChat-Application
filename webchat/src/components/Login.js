@@ -39,16 +39,17 @@ class Login extends Component {
             <div className="col-md-6">
                 <form className="loginContainer">
                     <div className="userInfo">
+                        <h2>Web Chat Login</h2>
                         <div>
-                            <label id="email">Email address</label>
+                            <label>Email address</label>
                             <input type="email" value={this.state.email} onChange={this.handleChange} name="email" placeholder="Enter Email" required></input>
                         </div>
                         <div>
                             <label >Password</label>
                             <input type="password" value={this.state.password} onChange={this.handleChange} name="password" placeholder="Password" required/>
                         </div>
-                        <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
-                        <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Signup</button>
+                        <button type="submit" onClick={this.login}>Login</button>
+                        <button onClick={this.signup}>Signup</button>
                     </div>
                 </form>
             </div>

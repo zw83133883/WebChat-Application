@@ -5,13 +5,55 @@
   border-radius:20px;
   height: 400px;
   background-image:linear-gradient(lightblue,white);   
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:cursive;
 }
 .userInfo{
   width:250px;
-  margin-top:100px;
+  margin-top:50px;
   margin-left:150px;
   height:100px;
-  text-align: right;
+  text-align: center;
   float:left;
 }
+.username-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+}
+
+h1 {
+  display: block;
+  font-family: cursive;
+}
+input[type="email"] {
+  margin: 10px 0px;
+  height: 60px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  color: #1e1e1e;
+  font: 400 1rem "proxima-nova", sans-serif;
+  width: 80%;
+  border: 1px solid #dee0e0;
+  padding: 0 20px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -moz-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+input[type="password"] {
+  margin: 10px 0px;
+  height: 60px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  color: #1e1e1e;
+  font: 400 1rem "proxima-nova", sans-serif;
+  width: 80%;
+  border: 1px solid #dee0e0;
+  padding: 0 20px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -moz-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+
