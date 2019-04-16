@@ -10,6 +10,7 @@ class Message extends Component {
                 </div>
                 <div className='message-body'>
                     {this.props.message}
+                    {this.props.time}
                 </div>
             </div>
         )
