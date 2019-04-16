@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fire from '../config/Fire'
 import Login from './Login';
-import Home from './Chatroom';
+import User from './Username';
 
 class App extends Component {
   constructor(){
@@ -24,9 +24,11 @@ class App extends Component {
     })
   }
   render() {
+    
     return (
+      
       <div className="App">
-          {this.state.user ? (<Home />) : (<Login/>)}
+          {this.state.user ? (<User/>) : (<Login/>)}
           
       </div>
     );
