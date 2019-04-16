@@ -12,10 +12,6 @@ Once all of the dependecies are installed navigate to the project directory and 
 Once the server is running, run the following command to launch the app:                                                      
 `npm start`
 
-### Deploy
-To deploy your project, you must run:                                                                                         
-
-`npm run deploy`
 
 
 #### NOTE:A server with your project should be automatically launched in your default browser,if you do not see the server you can manually navigate your server to www.localhost:3000
