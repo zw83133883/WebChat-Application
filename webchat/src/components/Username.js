@@ -30,7 +30,7 @@ class Username extends Component {
       );
     }
 
-    // Initial page load, show a simple login form
+    // Initial page load, show a simple login form after users login through firebase auth.
     return (
       <form onSubmit={this.usernameSubmitHandler} className="username-container">
         <h1>Web Chat</h1>

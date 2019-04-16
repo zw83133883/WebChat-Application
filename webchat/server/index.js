@@ -1,6 +1,5 @@
 var http = require("http");
 var express = require("express");
-var cors = require("cors");
 var io = require("socket.io");
 var config = require("./config.json");
 
@@ -9,9 +8,6 @@ const app = express();
 const server = http.createServer(app);
 
 const socketIo = io(server);
-
-// Allow CORS
-app.use(cors());
 
 // Start listening
 server.listen(process.env.PORT || config.port);
