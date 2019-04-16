@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import fire from './config/Fire';
-import './App.css';
+import fire from '../config/Fire'
 import Login from './Login';
 import Home from './Chatroom';
-import './App.css'; 
 
 class App extends Component {
   constructor(){

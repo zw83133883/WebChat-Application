@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import fire from './config/Fire';
-import './App.css';
+import fire from '../config/Fire'
+require('../styles/Login.css')
 
 class Login extends Component {
     constructor(props) {
