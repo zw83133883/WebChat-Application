@@ -4,15 +4,14 @@ The overall goal of the system is to build a cloud-based web chat application us
 ### Setup
 Navigate to the project directory and run the following command:                                                          
 `npm install `
+### Run the server
+Once all of the dependecies are installed navigate to the project directory and cd into the server folder and run the following command:
+`node index.js`
 
 ### Run
-Once all of the dependencies are installed run the following command:                                                         
+Once the server is running, run the following command to launch the app:                                                      
 `npm start`
 
-### Deploy
-To deploy your project, you must run:                                                                                         
-
-`npm run deploy`
 
 
 #### NOTE:A server with your project should be automatically launched in your default browser,if you do not see the server you can manually navigate your server to www.localhost:3000
