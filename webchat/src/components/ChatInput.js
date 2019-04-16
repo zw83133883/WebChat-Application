@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ChatInput extends React.Component {
+class ChatInput extends Component {
   constructor(props) {
     super(props);
     this.state = { chatInput: '' };
@@ -27,11 +27,7 @@ class ChatInput extends React.Component {
   render() {
     return (
       <form className="chat-input" onSubmit={this.submitHandler}>
-        <input type="text"
-          onChange={this.textChangeHandler}
-          value={this.state.chatInput}
-          placeholder="Write a message..."
-          required />
+        <input type="text" onChange={this.textChangeHandler} value={this.state.chatInput} placeholder="Write a message..." required />
       </form>
     );
   }
