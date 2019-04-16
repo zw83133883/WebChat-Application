@@ -1,6 +1,5 @@
-import React from 'react'
-
-class Message extends React.Component {
+import React, { Component } from 'react';
+class Message extends Component {
     render() {
         //check if the message was sent by the current user, if so, add a css class
         const fromMe = this.props.fromMe ? 'from-me' : '';

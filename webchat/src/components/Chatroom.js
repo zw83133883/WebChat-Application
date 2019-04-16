@@ -1,21 +1,53 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import fire from '../config/Fire';
+import Messages from './Messages';
+import ChatInput from './ChatInput';
+import io from 'socket.io-client';
+require('../styles/Chatroom.css');
 
-class Home extends Component{
-    constructor(props){
+class Chatroom extends Component {
+    socket = {};
+    constructor(props) {
         super(props);
-        this.logout = this.logout.bind(this);
+        this.state = { messages: [] };
+        this.sendHandler = this.sendHandler.bind(this);
+        this.socket = io("http://localhost:3001", { query: `username=${props.username}` }).connect();
+
+        this.socket.on('server:message', message => {
+            this.addMessage(message);
+        });
     }
-    logout(){
-        fire.auth().signOut();
+    sendHandler(message) {
+        const messageObject = {
+            username: this.props.username,
+            message
+        };
+
+        // Emit the message to the server
+        this.socket.emit('client:message', messageObject);
+
+        messageObject.fromMe = true;
+        this.addMessage(messageObject);
     }
-    render(){
-        return(
-            <div>
-                <h1>Chat room</h1>
-                <button onClick={this.logout}>Logout</button>
+    addMessage(message) {
+        // Append the message to the component state
+        const messages = this.state.messages;
+        messages.push(message);
+        this.setState({ messages });
+    }
+
+
+    render() {
+        return (
+            <div className="container">
+                <h3>Chat room</h3>
+                <Messages messages={this.state.messages} />
+                <ChatInput onSend={this.sendHandler} />
             </div>
         )
     }
 }
-export default Home;
+Chatroom.defaultProps ={
+    username:'Anonymous'
+}
+export default Chatroom;
