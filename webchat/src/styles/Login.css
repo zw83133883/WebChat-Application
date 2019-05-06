@@ -68,4 +68,7 @@ input[type="password"] {
   margin: 4px 2px;
   cursor: pointer;
 }
+#errorMessage{
+  color:red;
+}
 
