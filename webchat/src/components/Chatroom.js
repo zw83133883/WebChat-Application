@@ -9,10 +9,10 @@ class Chatroom extends Component {
     socket = {};
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = { messages: [] };
         this.sendHandler = this.sendHandler.bind(this);
         this.socket = io("http://localhost:3001", { query: `username=${props.username}` }).connect();
-
         this.socket.on('server:message', message => {
             this.addMessage(message);
         });
@@ -30,6 +30,7 @@ class Chatroom extends Component {
         this.addMessage(messageObject);
     }
     addMessage(message) {
+        
         // Append the message to the component state
         const messages = this.state.messages;
         messages.push(message);
@@ -40,7 +41,10 @@ class Chatroom extends Component {
     render() {
         return (
             <div className="container">
-                <h3>Chat room</h3>
+                <h3>Chat room
+                    <br></br>
+                    {"Welcome " + this.props.username}
+                </h3>
                 <Messages messages={this.state.messages} />
                 <ChatInput onSend={this.sendHandler} />
             </div>
