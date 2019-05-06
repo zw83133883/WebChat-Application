@@ -10,7 +10,8 @@ class Login extends Component {
         this.signup = this.signup.bind(this);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            error: ''
         };
     }
 
@@ -22,7 +23,10 @@ class Login extends Component {
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
         }).catch((error) => {
-            console.log(error);
+            var errorCode = error.code;
+            var errorString = errorCode.replace('auth/','');
+            var errorMessage =  errorString.charAt(0).toUpperCase() + errorString.slice(1);
+            this.setState({error: errorMessage})
         });
     }
 
@@ -31,7 +35,10 @@ class Login extends Component {
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
         }).then((u) => { console.log(u) })
             .catch((error) => {
-                console.log(error);
+                var errorCode = error.code;
+                var errorString = errorCode.replace('auth/','');
+                var errorMessage =  errorString.charAt(0).toUpperCase() + errorString.slice(1);
+                this.setState({error: errorMessage})
             })
     }
     render() {
@@ -48,6 +55,7 @@ class Login extends Component {
                             <label >Password</label>
                             <input type="password" value={this.state.password} onChange={this.handleChange} name="password" placeholder="Password" required/>
                         </div>
+                        <div id="errorMessage">{this.state.error}</div>
                         <button type="submit" className="login-button"onClick={this.login}>Login</button>
                         <button onClick={this.signup}>Signup</button>
                     </div>
