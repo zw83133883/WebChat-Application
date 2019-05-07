@@ -18,11 +18,11 @@ class Chatroom extends Component {
         });
     }
     sendHandler(message) {
+
         const messageObject = {
             username: this.props.username,
             message
         };
-
         // Emit the message to the server
         this.socket.emit('client:message', messageObject);
 
@@ -52,6 +52,6 @@ class Chatroom extends Component {
     }
 }
 Chatroom.defaultProps ={
-    username:'Anonymous'
+    username:'Anonymous',
 }
 export default Chatroom;

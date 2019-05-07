@@ -17,7 +17,8 @@ class Messages extends Component {
             key={i}
             username={message.username}
             message={message.message}
-            fromMe={message.fromMe} />
+            fromMe={message.fromMe} 
+            />
         );
       });
 

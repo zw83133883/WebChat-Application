@@ -7,6 +7,7 @@ class ChatInput extends Component {
   constructor(props) {
     super(props);
     this.state = { chatInput: '',
+                  timeStamp: '',
                   showEmojiPicker:false };
     
     this.submitHandler = this.submitHandler.bind(this);
@@ -18,10 +19,11 @@ class ChatInput extends Component {
   submitHandler(event) {
     // Stop the form from refreshing the page on submit
     event.preventDefault();
+    new Date();
+    this.setState({timeStamp: new Date().getTime()});
 
     // Clear the input box
     this.setState({ chatInput: '' });
-
     // Call the onSend callback with the chatInput message
     this.props.onSend(this.state.chatInput);
   }
